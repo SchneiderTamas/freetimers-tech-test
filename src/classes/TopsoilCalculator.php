@@ -141,4 +141,10 @@ class TopsoilCalculator
     {
         return $this->calculateBagsNeeded() * self::getBagCostWithVat();
     }
+
+    public function addToBasket()
+    {
+        $basket = \Basket::getInstance();
+        // some logic to add to basket
+    }
 }
