@@ -147,4 +147,10 @@ class TopsoilCalculator
         $basket = \Basket::getInstance();
         // some logic to add to basket
     }
+
+    public function saveToDb()
+    {
+        $dbManager = \Db\DatabaseManager::getInstance();
+        // logic to save to db
+    }
 }
