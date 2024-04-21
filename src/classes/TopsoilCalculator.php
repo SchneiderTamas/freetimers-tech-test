@@ -123,14 +123,13 @@ class TopsoilCalculator
     public function calculateVolume(): int
     {
         // convert width and length to cm
-        $width = self::convertToCm($this->getUnit(), $this->getWidth());
-        $length = self::convertToCm($this->getUnit(), $this->getLength());
-        $depth = self::convertToCm($this->getDepthUnit(), $this->getDepth());
+        $width = self::convertToCm($this->getUnit(), $this->getWidth()) / 100;
+        $length = self::convertToCm($this->getUnit(), $this->getLength()) / 100;
+        $depth = self::convertToCm($this->getDepthUnit(), $this->getDepth()) / 100;
 
         // calculate volume in cubic meters
-        $area = ($width * $length) / 100;
-        $depthInMeters = $depth / 100;
-        return $area * $depthInMeters;
+        $area = $width * $length;
+        return $area * $depth;
     }
 
     public function calculateBagsNeeded()
