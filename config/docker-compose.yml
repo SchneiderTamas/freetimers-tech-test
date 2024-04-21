@@ -3,7 +3,7 @@ services:
     container_name: php
     image: php:7.4-apache
     volumes:
-      - ..:/var/www/html
+      - ../src:/var/www/html
     env_file:
       - .env
     ports:
