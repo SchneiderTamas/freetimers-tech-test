@@ -1,3 +1,4 @@
+name: tamas-freetimers-tech-test
 services:
   php:
     container_name: php
