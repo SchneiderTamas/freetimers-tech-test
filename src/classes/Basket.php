@@ -1,5 +1,7 @@
 <?php
 
+namespace Classes;
+
 class Basket
 {
     private static $instance = null;
