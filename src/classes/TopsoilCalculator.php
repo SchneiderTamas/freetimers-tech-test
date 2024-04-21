@@ -2,6 +2,9 @@
 
 namespace Classes;
 
+require_once 'Basket.php';
+require_once 'DbManager.php';
+
 class TopsoilCalculator
 {
     private static int $bagCost = 60;
@@ -144,7 +147,7 @@ class TopsoilCalculator
 
     public function addToBasket()
     {
-        $basket = \Basket::getInstance();
+        $basket = \Classes\Basket::getInstance();
         // some logic to add to basket
     }
 
