@@ -1,6 +1,6 @@
 <?php
 
-require '../classes/TopsoilCalculator.php';
+require '../Classes/TopsoilCalculator.php';
 
 function testSetUnit() {
     echo "Testing " . __FUNCTION__ . "...\n";
