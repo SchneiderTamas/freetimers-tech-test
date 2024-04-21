@@ -1,0 +1,28 @@
+services:
+  php:
+    container_name: php
+    image: php:7.4-apache
+    volumes:
+      - ..:/var/www/html
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: mariadb:10.1
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db_data:
