@@ -121,6 +121,8 @@ function testCalculateBagsNeeded() {
     $expectedBags = 4;
 
     $calculator = new Classes\TopsoilCalculator();
+    $calculator->setUnit('metres');
+    $calculator->setDepthUnit('centimetres');
     $calculator->setDimensions(10, 10, 100);
 
     $bagsNeeded = $calculator->calculateBagsNeeded();
@@ -134,10 +136,10 @@ function testCalculateBagsNeeded() {
 function testCalculateBagsNeededPrice() {
     echo "Testing " . __FUNCTION__ . "...\n";
 
-    $expectedBags = 4;
-
     $calculator = new Classes\TopsoilCalculator();
     $calculator->setDimensions(10, 10, 100);
+    $calculator->setUnit('metres');
+    $calculator->setDepthUnit('centimetres');
     Classes\TopsoilCalculator::setBagCost(100);
     Classes\TopsoilCalculator::setVatPercent(20);
 
